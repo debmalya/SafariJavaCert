@@ -20,9 +20,28 @@ public class Ex1 {
     var x = 100;
   }
 
+//  public static void showAll(String [] sa) {
+  public static void showAll(String ... sa) {
+    for (String s : sa) {
+      System.out.println("> " + s);
+    }
+  }
+
   public static void main(String[] args) {
     // IntelliJ control-Q for quick documentation tells the type :)
-    var x = 2_000_000_000;
+//    var x = 2_000_000_000;
 //    x = "Hello";
+
+    // type inferencing (i.e. the compiler decides type of array
+    // suitable for the context...
+//    String [] names = {"Fred", "Jim", "Sheila"};
+    String [] names = new String[]{"Fred", "Jim", "Sheila"};
+    showAll(names);
+//    showAll({"Fred", "Jim", "Sheila"});
+    showAll(new String[]{"Fred", "Jim", "Sheila"});
+    showAll("Fred", "Jim", "Sheila");
+
+//    var x = { 1, 2, 3 };
+    var x = new int[]{ 1, 2, 3 };
   }
 }

@@ -1,4 +1,4 @@
-Which are legal
+Q) Which are legal
 
 A) class X {
   var x = 99;
@@ -18,3 +18,47 @@ D) void doStuff() {
 E) void doStuff() {
   var x = { 1, 2, 3 };
 }
+
+Q) Which are legal:
+
+   A) void doStuff() {
+     var x = new int[]{ 1, 2, 3 };
+   }
+B) void doStuff() {
+     var [] x = new int[]{ 1, 2, 3 };
+   }
+C) void doStuff() {
+     var x = 99;
+     x = "Hello";
+   }
+
+   D) void doStuff() {
+     var x = 1, y = 2;
+   }
+
+   E)
+   void doStuff() {
+     try {
+      // stuff happens
+      } catch (var ex) {
+      }
+   }
+
+Q)  A)
+       for (var x = 0; x < 3; x++)
+         System.out.println(x);
+    B)
+       try (var in = new FileReader("");
+            var out = new FileWriter("")) {
+       }
+    C)
+       var var = "var";
+
+
+
+
+
+
+
+
+
