@@ -93,9 +93,50 @@ B) s2 == s3
 C) s1 == s3
 D) X.h == s1
 
+Q) Given
+     void doStuff() throws IOException {};
+     void doStuff2() throws FileNotFoundException {};
+   And:
+     void tryStuff() {
+       try {
+         doStuff();
+         doStuff2();
+       } enter code here {
+         // handle both exceptions
+       }
+     }
+   What can be inserted at "enter code here"
+   to provide handling of exceptions from both
+   methods?
+   A) catch (IOException | FileNotFoundException e)
+   B) catch (FileNotFoundException | IOException e)
+   C) catch (FileNotFoundException e)
+   D) catch (IOException e)
+   E) finally
 
+Q)   Given:
+     public class Scr {
+       static int x = -1;
+       public static void main(String[] args) {
+         new ScrSub().doStuff();
+       }
+     }
+and:
+     class ScrSub extends Scr {
+       int x = 99;
+       void doStuff() {
+         System.out.print(x + ","); // line n1
+         int x = 100;
+         System.out.print(x + ",");
+         System.out.print(Scr.x + ",");
+       }
+     }
 
-
+A) Compilation fails at line n1
+B) Exception at line n1
+C) 99, 100, -1
+D) 0, 100, 99
+E) 0, 100, -1
 
 
 
