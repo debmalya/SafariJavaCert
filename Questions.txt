@@ -271,3 +271,40 @@ In the Base2 and Sub2 classes, which are true in isolation?
      C) doBaseStuff in Sub2 can be marked public without causing errors
      D) doBaseStuff in Sub2 can be marked protected without causing errors
      E) doBaseStuff in Sub2 can be marked private without causing errors
+
+Q) Given:
+     class Q23Base {
+       public Q23Base get() {
+         return null;
+       }
+     }
+
+     class Q23Sub extends Q23Base {
+     }
+
+Which methods may individually be added to this class?
+
+   A) public Q23Base get() { return null; }
+   B) public Q23Sub get() { return null; }
+   C) public Runnable get() { return null; }
+
+Q)   class Base2 {
+       void doBaseStuff() {
+         System.out.println("doBaseStuff");
+       }
+     }
+
+     class Sub2 extends Base2 {
+       void doBaseStuff() {
+         System.out.println("doSubStuff");
+       }
+     }
+
+In the Base2 and Sub2 classes, which are true in isolation?
+
+   A) doBaseStuff in Base2 can be marked throws Exception without causing errors
+   B) doBaseStuff in Base2 can be marked throws RuntimeException without causing errors
+   C) doBaseStuff in Sub2 can be marked throws Exception without causing errors
+   D) doBaseStuff in Sub2 can be marked throws RuntimeException without causing errors
+   E) if doBaseStuff in Base2 were marked throws Exception,
+      then doBaseStuff in Sub2 can be marked throws IOException without causing errors
