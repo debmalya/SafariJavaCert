@@ -172,4 +172,51 @@ A) Method D is invoked
 B) Method E is invoked
 C) Compilation fails
 
+Q) Given:
+class O {
+  int x;
+  O(int x) { this.x = x; }
+  class I {
+    int y;
+    I(int y) { this.y = y; }
+    void show() {
+        System.out.println("y is " + y + " x is " + x);
+    }
+  }
+}
 
+what happens with this:
+O.I i = new I(100);
+i.show();
+
+A) Compilation fails
+B) Runtime exception is thrown
+C) y is 100 x is 0
+D) y is 100 x is 100
+E) y is 0 x is 0
+
+
+Q) Given:
+     class Q25Base {
+       int x = 99;
+       {
+         System.out.println("x is " + x);
+       }
+     }
+     class Q25Sub extends Q25Base {
+       Q25Sub(int x) {
+         System.out.println("in constructor, x is " + x);
+       }
+       public static void go() {
+         new Q25Sub(1);
+       }
+     }
+
+Given a call to go(), what is the result?
+   A) in constructor, x is 1
+      x is 99
+   B) x is 99
+      in constructor, x is 1
+   C) x is 99
+      in constructor, x is 99
+   D) Compilation fails

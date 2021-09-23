@@ -19,6 +19,7 @@ public class MyList<E> implements Iterable<E> {
   // non-static!!!!
   private class MyIterator implements Iterator<E> {
     // implicit reference to a particular MyList...
+
     private MyIterator(){}
     private int progress = 0;
     @Override
@@ -37,7 +38,7 @@ public class MyList<E> implements Iterable<E> {
     mls.add("Fred");
     mls.add("Jim");
     mls.add("Sheila");
-    for (String s : mls) {
+    for (String s : mls) { // implicit call to mls.iterator(), and hasNext()/next() repeatedly
       System.out.println("> " + s);
     }
     Class<?> mlc = MyList.MyIterator.class;
