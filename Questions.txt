@@ -308,3 +308,48 @@ In the Base2 and Sub2 classes, which are true in isolation?
    D) doBaseStuff in Sub2 can be marked throws RuntimeException without causing errors
    E) if doBaseStuff in Base2 were marked throws Exception,
       then doBaseStuff in Sub2 can be marked throws IOException without causing errors
+
+Q) Given:
+   interface Int1 {
+     default void doStuff() {
+       System.out.println("Int1.doStuff()");
+     }
+   }
+   class Cl1 implements Int1 {
+     void doStuff() {
+       System.out.println("Cl1.doStuff");
+     }
+   }
+
+What is the result of a call:
+   new Cl1().doStuff();
+
+   A) Compilation fails
+   B) RuntimeException
+   C) Int1.doStuff()
+   D) Cl1.doStuff()
+   E) Int1.doStuff()
+      Cl1.doStuff()
+Q) Given:
+   interface IntA {
+     default void doStuff() { System.out.println("IntA.doStuff()"); }
+   }
+   interface IntB {
+     default void doStuff() { System.out.println("IntB.doStuff()"); }
+   }
+
+   class ClA implements IntA, IntB {
+     public void doStuff() { System.out.println("ClA.doStuff"); }
+   }
+
+What is the result of a call:
+   public class Q3 {
+     public static void main(String[] args) { new ClA().doStuff(); }
+   }
+
+A) Compilation fails
+B) RuntimeException
+C) IntA.doStuff()
+D) IntB.doStuff()
+E) ClA.doStuff()
+
