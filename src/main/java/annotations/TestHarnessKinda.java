@@ -12,7 +12,7 @@ public class TestHarnessKinda {
       System.out.println(m);
       RunMe annot = m.getAnnotation(RunMe.class);
       if (annot != null) {
-        System.out.println("Annotation found!!!");
+        System.out.println("Annotation found!!! name is " + annot.name());
       }
     }
 

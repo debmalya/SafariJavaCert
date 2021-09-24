@@ -5,12 +5,12 @@ public class UnitUnderTest {
 //  @RunMe
   String name;
 
-  @RunMe
+  @RunMe(99) // equivalent to value=99
   public void runThis() {
     System.out.println("UUT.runThis");
   }
 
-  @RunMe
+  @RunMe(name="Sheila", value=100)
   public void runThat() {
     System.out.println("UUT.runThat");
   }

@@ -433,3 +433,21 @@ Which is true?
      B) Object containing "World" is unreferenced and eligible for GC
      C) Object containing "Hello", and "World" are both unreferenced and eligible for GC
      D) No objects are eligible for GC
+
+Q) Which are valid annotation declarations?
+   A) @interface Annot {}
+
+   B) @ interface Annot {
+        String value() = "";
+      }
+
+   C) @interface Annot {
+        StringBuilder text();
+      }
+
+   D) @interface Annot {
+        Class value();
+      }
+
+   E) @Retention(RetentionPolicy.CLASS)
+      @interface Annot {}
